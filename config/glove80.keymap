@@ -19,6 +19,7 @@
 #define LAYER_Base 0
 #define LAYER_Lower 1
 #define LAYER_Magic 2
+#define LAYER_Symbol 3
 
 // Special keys
 #define HYPER LC(LS(LG(LALT)))
@@ -192,7 +193,7 @@
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
-        hold-trigger-on-release; // wait for other home row mods
+        hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
         tapping-term-ms = <HOLDING_TIME_INDEX_MS>;
         quick-tap-ms = <REPEAT_DECAY_INDEX_MS>;
         require-prior-idle-ms = <STREAK_DECAY_INDEX_MS>;
@@ -203,12 +204,34 @@
         compatible = "zmk,behavior-hold-tap";
         flavor = "tap-preferred";
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
-        hold-trigger-on-release; // wait for other home row mods
+        hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
         tapping-term-ms = <HOLDING_TIME_INDEX_MS>;
         quick-tap-ms = <REPEAT_DECAY_INDEX_MS>;
         require-prior-idle-ms = <STREAK_DECAY_INDEX_MS>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
+    };
+    hrll: homerow_left_hand_layer {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = "tap-preferred";
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
+        tapping-term-ms = <HOLDING_TIME_DEFAULT_MS>;
+        quick-tap-ms = <REPEAT_DECAY_DEFAULT_MS>;
+        require-prior-idle-ms = <STREAK_DECAY_DEFAULT_MS>;
+        #binding-cells = <2>;
+        bindings = <&mo>, <&kp>;
+    };
+    hrrl: homerow_right_hand_layer {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = "tap-preferred";
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
+        tapping-term-ms = <HOLDING_TIME_DEFAULT_MS>;
+        quick-tap-ms = <REPEAT_DECAY_DEFAULT_MS>;
+        require-prior-idle-ms = <STREAK_DECAY_DEFAULT_MS>;
+        #binding-cells = <2>;
+        bindings = <&mo>, <&kp>;
     };
   };
 
@@ -217,12 +240,12 @@
 
     layer_Base {
       bindings = <
-               &kp F1       &kp F2        &kp F3       &kp F4         &kp F5                                                                                         &kp F6       &kp F7        &kp F8          &kp F9    &kp F10
-            &kp EQUAL       &kp N1        &kp N2       &kp N3         &kp N4  &kp N5                                                                  &kp N6         &kp N7       &kp N8        &kp N9          &kp N0  &kp MINUS
-              &kp TAB        &kp Q   &hrl RALT W        &kp E          &kp R   &kp T                                                                   &kp Y          &kp U        &kp I   &hrr RALT O           &kp P   &kp BSLH
-              &kp ESC  &hrl LALT A  &hrl LCTRL S  &hrl LGUI D  &hrli LSHFT F   &kp G                                                                   &kp H  &hrri LSHFT J  &hrr LGUI K  &hrr LCTRL L  &hrr LALT SEMI    &kp SQT
-            &kp GRAVE        &kp Z         &kp X        &kp C          &kp V   &kp B  &kp LSHFT  &kp LCTRL    &lower  &kp LGUI  &kp RCTRL  &kp RSHFT   &kp N          &kp M    &kp COMMA       &kp DOT        &kp FSLH  &kp PG_UP
- &magic LAYER_Magic 0     &kp HOME       &kp END     &kp LEFT      &kp RIGHT           &kp BSPC    &kp DEL  &kp LALT  &kp RALT    &kp RET  &kp SPACE                 &kp UP     &kp DOWN      &kp LBKT        &kp RBKT  &kp PG_DN
+               &kp F1       &kp F2                 &kp F3       &kp F4         &kp F5                                                                                         &kp F6       &kp F7                 &kp F8          &kp F9    &kp F10
+            &kp EQUAL       &kp N1                 &kp N2       &kp N3         &kp N4  &kp N5                                                                  &kp N6         &kp N7       &kp N8                 &kp N9          &kp N0  &kp MINUS
+              &kp TAB        &kp Q   &hrll LAYER_Symbol W        &kp E          &kp R   &kp T                                                                   &kp Y          &kp U        &kp I   &hrrl LAYER_Symbol O           &kp P   &kp BSLH
+              &kp ESC  &hrl LALT A           &hrl LCTRL S  &hrl LGUI D  &hrli LSHFT F   &kp G                                                                   &kp H  &hrri LSHFT J  &hrr LGUI K           &hrr LCTRL L  &hrr LALT SEMI    &kp SQT
+            &kp GRAVE        &kp Z                  &kp X        &kp C          &kp V   &kp B  &kp LSHFT  &kp LCTRL    &lower  &kp LGUI  &kp RCTRL  &kp RSHFT   &kp N          &kp M    &kp COMMA                &kp DOT        &kp FSLH  &kp PG_UP
+ &magic LAYER_Magic 0     &kp HOME                &kp END     &kp LEFT      &kp RIGHT           &kp BSPC    &kp DEL  &kp LALT  &kp RALT    &kp RET  &kp SPACE                 &kp UP     &kp DOWN               &kp LBKT        &kp RBKT  &kp PG_DN
       >;
     };
 
@@ -248,5 +271,29 @@
       >;
     };
 
+    layer_Symbol {
+      bindings = <
+        &none     &none     &none      &none     &none                                                                             &none      &none     &none      &none    &none
+        &none     &none     &none      &none     &none    &none                                                          &none     &none      &none     &none      &none    &none
+        &none     &none     &none  &kp UNDER     &none    &none                                                          &none     &none  &kp EQUAL     &none      &none    &none
+        &none  &kp PLUS  &kp LBKT   &kp LBRC  &kp LPAR    &none                                                          &none  &kp RPAR   &kp RBRC  &kp RBKT  &kp MINUS    &none
+        &none     &none     &none      &none     &none    &none    &none    &none    &none    &none    &none    &none    &none     &none      &none     &none      &none    &none
+        &none     &none     &none      &none     &none             &none    &none    &none    &none    &none    &none              &none      &none     &none      &none    &none
+      >;
+    };
+
   };
 };
+
+/* Empty layer template
+    layer_Empty {
+      bindings = <
+        &none    &none    &none    &none    &none                                                                            &none    &none    &none    &none    &none
+        &none    &none    &none    &none    &none    &none                                                          &none    &none    &none    &none    &none    &none
+        &none    &none    &none    &none    &none    &none                                                          &none    &none    &none    &none    &none    &none
+        &none    &none    &none    &none    &none    &none                                                          &none    &none    &none    &none    &none    &none
+        &none    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
+        &none    &none    &none    &none    &none             &none    &none    &none    &none    &none    &none             &none    &none    &none    &none    &none
+      >;
+    };
+*/
