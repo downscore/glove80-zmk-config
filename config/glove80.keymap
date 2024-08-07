@@ -273,12 +273,12 @@
 
     layer_Symbol {
       bindings = <
-        &none     &none     &none      &none     &none                                                                             &none      &none     &none      &none    &none
-        &none     &none     &none      &none     &none    &none                                                          &none     &none      &none     &none      &none    &none
-        &none     &none     &none  &kp UNDER     &none    &none                                                          &none     &none  &kp EQUAL     &none      &none    &none
-        &none  &kp PLUS  &kp LBKT   &kp LBRC  &kp LPAR    &none                                                          &none  &kp RPAR   &kp RBRC  &kp RBKT  &kp MINUS    &none
-        &none     &none     &none      &none     &none    &none    &none    &none    &none    &none    &none    &none    &none     &none      &none     &none      &none    &none
-        &none     &none     &none      &none     &none             &none    &none    &none    &none    &none    &none              &none      &none     &none      &none    &none
+        &none      &none     &none      &none     &none                                                                               &none      &none     &none       &none    &none
+        &none      &none     &none      &none     &none    &none                                                           &none      &none      &none     &none       &none    &none
+        &none  &kp CARET  &kp AMPS  &kp UNDER  &kp EXCL   &kp AT                                                        &kp PIPE   &kp HASH  &kp EQUAL  &kp STAR  &kp DOLLAR    &none
+        &none   &kp PLUS  &kp LBKT   &kp LBRC  &kp LPAR  &kp DQT                                                         &kp SQT   &kp RPAR   &kp RBRC  &kp RBKT   &kp MINUS    &none
+        &none   &kp BSLH     &none  &kp PRCNT     &none    &none    &none    &none    &none    &none    &none    &none     &none      &none      &none     &none       &none    &none
+        &none      &none     &none      &none     &none             &none    &none    &none    &none    &none    &none                &none      &none     &none       &none    &none
       >;
     };
 
