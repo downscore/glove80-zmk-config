@@ -36,6 +36,7 @@
 #define REPEAT_DECAY_DEFAULT_MS 300
 #define REPEAT_DECAY_INDEX_MS 300
 
+// System commands
 / {
   behaviors {
     // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
@@ -47,6 +48,15 @@
       tapping-term-ms = <200>;
       bindings = <&mo LAYER_Lower>, <&to LAYER_Lower>;
     };
+    // Magic key. Hold for RGB status display.
+    magic: magic {
+      compatible = "zmk,behavior-hold-tap";
+      label = "MAGIC_HOLD_TAP";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <200>;
+      bindings = <&mo>, <&rgb_ug_status_macro>;
+    };
   };
 
   macros {
@@ -57,7 +67,10 @@
       bindings = <&rgb_ug RGB_STATUS>;
     };
   };
+};
 
+// Bluetooth
+/ {
   behaviors {
     bt_0: bt_0 {
       compatible = "zmk,behavior-tap-dance";
@@ -115,19 +128,10 @@
       bindings = <&out OUT_BLE>, <&bt BT_SEL 3>;
     };
   };
+};
 
-  behaviors {
-    magic: magic {
-      compatible = "zmk,behavior-hold-tap";
-      label = "MAGIC_HOLD_TAP";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <200>;
-      bindings = <&mo>, <&rgb_ug_status_macro>;
-    };
-  };
-
-  // Bilateral homerow mods
+// Bilateral homerow mods
+/ {
   behaviors {
     // |------------------------|------------------------|
     // | LEFT_HAND_KEYS         |        RIGHT_HAND_KEYS |
