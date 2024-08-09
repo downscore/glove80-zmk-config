@@ -32,10 +32,10 @@
 // Homerow mod configuration. Separate values for index finger mods.
 // ---
 // Time before a hold is triggered.
-#define HOLDING_TIME_DEFAULT_MS 250
-#define HOLDING_TIME_INDEX_MS 250
+#define HOLDING_TIME_DEFAULT_MS 200
+#define HOLDING_TIME_INDEX_MS 200
 // How long you need to wait after typing before home row mods can be used again.
-#define STREAK_DECAY_DEFAULT_MS 250
+#define STREAK_DECAY_DEFAULT_MS 150
 #define STREAK_DECAY_INDEX_MS 150
 // How much time you have left after tapping a key to hold it again in order to make it auto-repeat.
 #define REPEAT_DECAY_DEFAULT_MS 300
