@@ -77,7 +77,7 @@
       #binding-cells = <2>;
       flavor = "tap-preferred";
       tapping-term-ms = <DEFAULT_TAPPING_TERM_MS>;
-      bindings = <&kp SHIFT>, <&caps_word>;
+      bindings = <&kp LSHFT>, <&caps_word>;
     };
   };
 
