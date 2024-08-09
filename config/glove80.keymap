@@ -26,7 +26,7 @@
 #define HYPER LC(LS(LG(LALT)))
 #define MEH LC(LS(LALT))
 
-// Homerow mod configuration. Separate values for index finger mods,
+// Homerow mod configuration. Separate values for index finger mods.
 // ---
 // Time before a hold is triggered.
 #define HOLDING_TIME_DEFAULT_MS 250
