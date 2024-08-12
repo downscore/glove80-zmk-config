@@ -35,8 +35,8 @@
 #define HOLDING_TIME_DEFAULT_MS 250
 #define HOLDING_TIME_INDEX_MS 250
 // How long you need to wait after typing before home row mods can be used again.
-#define STREAK_DECAY_DEFAULT_MS 175
-#define STREAK_DECAY_INDEX_MS 150
+#define STREAK_DECAY_DEFAULT_MS 125
+#define STREAK_DECAY_INDEX_MS 125
 // How much time you have left after tapping a key to hold it again in order to make it auto-repeat.
 #define REPEAT_DECAY_DEFAULT_MS 300
 #define REPEAT_DECAY_INDEX_MS 300
@@ -293,7 +293,7 @@
         &none      &none      &none      &none      &none    &none                                                             &none      &none      &none     &none       &none    &none
         &none  &kp CARET   &kp AMPS  &kp UNDER   &kp EXCL   &kp AT                                                             &none   &kp HASH  &kp EQUAL  &kp PIPE  &kp DOLLAR    &none
         &none   &kp PLUS   &kp LBKT   &kp LBRC   &kp LPAR  &kp DQT                                                           &kp SQT   &kp RPAR   &kp RBRC  &kp RBKT   &kp MINUS    &none
-        &none   &kp BSLH  &kp PRCNT  &kp GRAVE     &kp LT    &none   &trans    &none    &none    &none    &none  &kp LSHFT     &none     &kp GT  &kp TILDE  &kp STAR    &kp FSLH    &none
+        &none   &kp BSLH  &kp PRCNT  &kp GRAVE     &kp LT    &none   &trans    &none    &none    &none    &none  &kp LSHFT     &none     &kp GT  &kp TILDE  &kp STAR   &kp QMARK    &none
         &none      &none      &none      &none      &none            &trans   &trans    &none    &none   &trans     &trans                &none      &none     &none       &none    &none
       >;
     };
