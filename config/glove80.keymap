@@ -249,24 +249,24 @@
 
     layer_Base {
       bindings = <
-               &kp F1       &kp F2                 &kp F3       &kp F4         &kp F5                                                                                              &kp F6       &kp F7                 &kp F8          &kp F9    &kp F10
-            &kp EQUAL       &kp N1                 &kp N2       &kp N3         &kp N4  &kp N5                                                                       &kp N6         &kp N7       &kp N8                 &kp N9          &kp N0  &kp MINUS
-            &kp GRAVE        &kp Q   &hrll LAYER_Symbol W        &kp E          &kp R   &kp T                                                                        &kp Y          &kp U        &kp I   &hrrl LAYER_Symbol O           &kp P   &kp BSLH
-              &kp ESC  &hrl LALT A           &hrl LCTRL S  &hrl LGUI D  &hrli LSHFT F   &kp G                                                                        &kp H  &hrri LSHFT J  &hrr LGUI K           &hrr LCTRL L  &hrr LALT SEMI    &kp SQT
-            &kp LSHFT        &kp Z                  &kp X        &kp C          &kp V   &kp B   &kp TAB   &game  &kp LCTRL  &kp LGUI   &lower  &smart_shift LSHFT 0   &kp N          &kp M    &kp COMMA                &kp DOT        &kp FSLH  &kp PG_UP
- &magic LAYER_Magic 0     &kp HOME                &kp END     &kp LEFT      &kp RIGHT          &kp BSPC  &lower    &kp DEL  &kp LALT  &kp RET             &kp SPACE                 &kp UP     &kp DOWN               &kp LBKT        &kp RBKT  &kp PG_DN
+               &kp F1       &kp F2                 &kp F3       &kp F4         &kp F5                                                                                                 &kp F6       &kp F7                &kp F8          &kp F9    &kp F10
+            &kp EQUAL       &kp N1                 &kp N2       &kp N3         &kp N4  &kp N5                                                                          &kp N6         &kp N7       &kp N8                &kp N9          &kp N0  &kp MINUS
+            &kp GRAVE        &kp Q   &hrll LAYER_Symbol W        &kp E          &kp R   &kp T                                                                           &kp Y          &kp U        &kp I  &hrrl LAYER_Symbol O           &kp P   &kp BSLH
+              &kp ESC  &hrl LALT A           &hrl LCTRL S  &hrl LGUI D  &hrli LSHFT F   &kp G                                                                           &kp H  &hrri LSHFT J  &hrr LGUI K          &hrr LCTRL L  &hrr LALT SEMI    &kp SQT
+            &kp LSHFT        &kp Z                  &kp X        &kp C          &kp V   &kp B  &kp LSHFT  &kp TAB    &game  &kp LGUI  &kp LCTRL  &smart_shift LSHFT 0   &kp N          &kp M    &kp COMMA               &kp DOT        &kp FSLH  &kp PG_UP
+ &magic LAYER_Magic 0     &kp HOME                &kp END     &kp LEFT      &kp RIGHT           &kp BSPC   &lower  &kp DEL  &kp LALT    &kp RET             &kp SPACE                 &kp UP     &kp DOWN              &kp LBKT        &kp RBKT  &kp PG_DN
       >;
     };
 
     // Lower layer with numpad on the right and modifiers for use with the mouse on the left.
     layer_Lower {
       bindings = <
-         &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV  &kp C_NEXT   &kp C_PP                                                                          &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP            &none  &kp PAUSE_BREAK
-             &kp PLUS       &kp F11     &kp F12       &none      &none   &kp HOME                                                    &kp LPAR  &kp KP_PLUS  &kp KP_EQUAL  &kp KP_SLASH  &kp KP_MULTIPLY        &kp UNDER
-            &kp TILDE     &kp CARET    &kp AMPS   &kp UNDER   &kp EXCL    &kp END                                                    &kp RPAR    &kp KP_N7     &kp KP_N8     &kp KP_N9       &kp DOLLAR         &kp PIPE
-               &trans      &kp LALT   &kp LCTRL    &kp LGUI  &kp LSHFT  &kp PG_UP                                                 &kp PERCENT    &kp KP_N4     &kp KP_N5     &kp KP_N6        &kp MINUS          &kp DQT
-               &trans     &kp LG(Z)   &kp LG(X)   &kp LG(C)  &kp LG(V)  &kp PG_DN  &trans  &to 0  &trans  &trans   &to 0  &trans    &kp COMMA    &kp KP_N1     &kp KP_N2     &kp KP_N3        &kp QMARK           &trans
- &magic LAYER_Magic 0        &trans      &trans      &trans     &trans             &trans  &to 0  &trans  &trans  &trans  &trans                 &kp KP_N0     &kp UNDER    &kp KP_DOT     &kp KP_ENTER           &trans
+         &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV  &kp C_NEXT   &kp C_PP                                                                           &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP            &none  &kp PAUSE_BREAK
+             &kp PLUS       &kp F11     &kp F12       &none      &none   &kp HOME                                                     &kp LPAR  &kp KP_PLUS  &kp KP_EQUAL  &kp KP_SLASH  &kp KP_MULTIPLY        &kp UNDER
+            &kp TILDE     &kp CARET    &kp AMPS   &kp UNDER   &kp EXCL    &kp END                                                     &kp RPAR    &kp KP_N7     &kp KP_N8     &kp KP_N9       &kp DOLLAR         &kp PIPE
+               &trans      &kp LALT   &kp LCTRL    &kp LGUI  &kp LSHFT  &kp PG_UP                                                  &kp PERCENT    &kp KP_N4     &kp KP_N5     &kp KP_N6        &kp MINUS          &kp DQT
+               &trans     &kp LG(Z)   &kp LG(X)   &kp LG(C)  &kp LG(V)  &kp PG_DN  &trans  &trans   &to 0  &trans  &trans  &trans    &kp COMMA    &kp KP_N1     &kp KP_N2     &kp KP_N3        &kp QMARK           &trans
+ &magic LAYER_Magic 0        &trans      &trans      &trans     &trans             &trans   &to 0  &trans  &trans  &trans  &trans                 &kp KP_N0     &kp UNDER    &kp KP_DOT     &kp KP_ENTER           &trans
       >;
     };
 
@@ -286,12 +286,12 @@
     // Common symbol combinations: "->", "!=", "/*", "#!"
     layer_Symbol {
       bindings = <
-        &none      &none      &none      &none     &none                                                                        &none      &none     &none       &none   &none
-        &none      &none      &none      &none     &none    &none                                                     &none     &none      &none     &none       &none   &none
-        &none  &kp CARET   &kp AMPS  &kp UNDER  &kp EXCL   &kp AT                                                     &none  &kp HASH  &kp EQUAL  &kp PIPE  &kp DOLLAR   &none
-        &none   &kp PLUS   &kp LBKT   &kp LBRC  &kp LPAR  &kp DQT                                                   &kp SQT  &kp RPAR   &kp RBRC  &kp RBKT   &kp MINUS   &none
-        &none   &kp BSLH  &kp PRCNT  &kp GRAVE    &kp LT    &none  &trans  &none   &none  &none   &none  &kp LSHFT    &none    &kp GT  &kp TILDE  &kp STAR   &kp QMARK   &none
-        &none      &none      &none      &none     &none           &trans  &none  &trans  &none  &trans     &trans              &none      &none     &none       &none   &none
+        &none      &none      &none      &none     &none                                                                          &none      &none     &none       &none   &none
+        &none      &none      &none      &none     &none    &none                                                       &none     &none      &none     &none       &none   &none
+        &none  &kp CARET   &kp AMPS  &kp UNDER  &kp EXCL   &kp AT                                                       &none  &kp HASH  &kp EQUAL  &kp PIPE  &kp DOLLAR   &none
+        &none   &kp PLUS   &kp LBKT   &kp LBRC  &kp LPAR  &kp DQT                                                     &kp SQT  &kp RPAR   &kp RBRC  &kp RBKT   &kp MINUS   &none
+        &none   &kp BSLH  &kp PRCNT  &kp GRAVE    &kp LT    &none  &trans  &trans   &none  &trans  &trans  &kp LSHFT    &none    &kp GT  &kp TILDE  &kp STAR   &kp QMARK   &none
+        &none      &none      &none      &none     &none           &trans   &none  &trans  &trans  &trans     &trans              &none      &none     &none       &none   &none
       >;
     };
 
@@ -299,16 +299,15 @@
     // - Left hand letters, including WASD, are shifted one position right.
     // - hjkl are arrows.
     // - Escape button at the top left.
-    // - Alt on left thumb button to make it easy to hold down.
     // - No homerow mods.
     layer_Game {
       bindings = <
-              &kp ESC     &kp F2  &kp F3    &kp F4     &kp F5                                                                                    &kp F6     &kp F7     &kp F8    &kp F9    &kp F10
-            &kp EQUAL     &kp N1  &kp N2    &kp N3     &kp N4  &kp N5                                                                  &kp N6    &kp N7     &kp N8     &kp N9    &kp N0  &kp MINUS
-                &kp T    &kp TAB   &kp Q     &kp W      &kp E   &kp R                                                                   &kp Y     &kp U      &kp I      &kp O     &kp P   &kp BSLH
-                &kp G  &kp LSHFT   &kp A     &kp S      &kp D   &kp F                                                                &kp LEFT  &kp DOWN     &kp UP  &kp RIGHT  &kp SEMI    &kp SQT
-                &kp B  &kp LCTRL   &kp Z     &kp X      &kp C   &kp V   &kp TAB    &to 0  &kp LCTRL  &kp LCMD      &to 0  &kp LSHFT     &kp N     &kp M  &kp COMMA    &kp DOT  &kp FSLH  &kp PG_UP
- &magic LAYER_Magic 0   &kp LCMD   &none  &kp LEFT  &kp RIGHT          &kp LALT  &kp DEL      &to 0  &kp LALT  &kp ENTER  &kp SPACE              &kp UP   &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
+              &kp ESC     &kp F2  &kp F3    &kp F4     &kp F5                                                                                   &kp F6     &kp F7     &kp F8    &kp F9    &kp F10
+            &kp EQUAL     &kp N1  &kp N2    &kp N3     &kp N4  &kp N5                                                                 &kp N6    &kp N7     &kp N8     &kp N9    &kp N0  &kp MINUS
+                &kp T    &kp TAB   &kp Q     &kp W      &kp E   &kp R                                                                  &kp Y     &kp U      &kp I      &kp O     &kp P   &kp BSLH
+                &kp G  &kp LSHFT   &kp A     &kp S      &kp D   &kp F                                                               &kp LEFT  &kp DOWN     &kp UP  &kp RIGHT  &kp SEMI    &kp SQT
+                &kp B  &kp LCTRL   &kp Z     &kp X      &kp C   &kp V  &kp LSHFT  &kp TAB    &to 0  &kp LGUI  &kp LCTRL  &kp LSHFT     &kp N     &kp M  &kp COMMA    &kp DOT  &kp FSLH  &kp PG_UP
+ &magic LAYER_Magic 0   &kp LCMD   &none  &kp LEFT  &kp RIGHT           &kp BSPC    &none  &kp DEL  &kp LALT  &kp ENTER  &kp SPACE              &kp UP   &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
       >;
     };
   };
