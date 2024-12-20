@@ -20,7 +20,7 @@
 #define LAYER_Lower 1
 #define LAYER_Magic 2
 #define LAYER_Symbol 3
-#define LAYER_Game 4
+#define LAYER_Raise 4
 
 // Special keys
 #define HYPER LC(LS(LG(LALT)))
@@ -55,12 +55,12 @@
       tapping-term-ms = <DEFAULT_TAPPING_TERM_MS>;
       bindings = <&mo LAYER_Lower>, <&to LAYER_Lower>;
     };
-    // Game layer key. Tap dance to toggle the layer on double tap.
-    game: game {
+    // Raise layer key. Tap dance to toggle the layer on double tap.
+    raise: raise {
       compatible = "zmk,behavior-tap-dance";
       #binding-cells = <0>;
       tapping-term-ms = <DEFAULT_TAPPING_TERM_MS>;
-      bindings = <&mo LAYER_Game>, <&to LAYER_Game>;
+      bindings = <&mo LAYER_Raise>, <&to LAYER_Raise>;
     };
     // Magic key. Hold for RGB status display.
     magic: magic {
@@ -253,7 +253,7 @@
             &kp EQUAL       &kp N1                 &kp N2       &kp N3         &kp N4  &kp N5                                                                          &kp N6         &kp N7       &kp N8                &kp N9          &kp N0  &kp MINUS
             &kp GRAVE        &kp Q   &hrll LAYER_Symbol W        &kp E          &kp R   &kp T                                                                           &kp Y          &kp U        &kp I  &hrrl LAYER_Symbol O           &kp P   &kp BSLH
               &kp ESC  &hrl LALT A           &hrl LCTRL S  &hrl LGUI D  &hrli LSHFT F   &kp G                                                                           &kp H  &hrri LSHFT J  &hrr LGUI K          &hrr LCTRL L  &hrr LALT SEMI    &kp SQT
-            &kp LSHFT        &kp Z                  &kp X        &kp C          &kp V   &kp B  &kp LSHFT  &kp TAB    &game  &kp LGUI  &kp LCTRL  &smart_shift LSHFT 0   &kp N          &kp M    &kp COMMA               &kp DOT        &kp FSLH  &kp PG_UP
+            &kp LSHFT        &kp Z                  &kp X        &kp C          &kp V   &kp B  &kp LSHFT  &kp TAB   &raise  &kp LGUI  &kp LCTRL  &smart_shift LSHFT 0   &kp N          &kp M    &kp COMMA               &kp DOT        &kp FSLH  &kp PG_UP
  &magic LAYER_Magic 0     &kp HOME                &kp END     &kp LEFT      &kp RIGHT           &kp BSPC   &lower  &kp DEL  &kp LALT    &kp RET             &kp SPACE                 &kp UP     &kp DOWN              &kp LBKT        &kp RBKT  &kp PG_DN
       >;
     };
@@ -300,7 +300,7 @@
     // - hjkl are arrows.
     // - Escape button at the top left.
     // - No homerow mods.
-    layer_Game {
+    layer_Raise {
       bindings = <
               &kp ESC     &kp F2  &kp F3    &kp F4     &kp F5                                                                                   &kp F6     &kp F7     &kp F8    &kp F9    &kp F10
             &kp EQUAL     &kp N1  &kp N2    &kp N3     &kp N4  &kp N5                                                                 &kp N6    &kp N7     &kp N8     &kp N9    &kp N0  &kp MINUS
