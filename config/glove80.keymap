@@ -293,7 +293,6 @@
  &magic LAYER_Magic 0   &kp LCMD   &none  &kp LEFT  &kp RIGHT           &kp BSPC   &lower  &kp DEL  &kp LALT  &kp ENTER  &kp SPACE              &kp UP   &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
       >;
     };
-  };
 
     // Regular keyboard mode with no homerow mods, caps word, etc.
     // Function keys are mapped to media keys, but lower layer is accessible.
@@ -307,6 +306,7 @@
  &magic LAYER_Magic 0      &kp HOME     &kp END    &kp LEFT  &kp RIGHT           &kp BSPC   &lower  &kp DEL  &kp LALT    &kp RET  &kp SPACE              &kp UP      &kp DOWN       &kp LBKT  &kp RBKT  &kp PG_DN
       >;
     };
+  };
 };
 
 /* Empty layer template
