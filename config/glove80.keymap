@@ -145,7 +145,11 @@
     // Time before a hold is triggered.
     #define HOLDING_TIME_DEFAULT_MS 250
     // How long you need to wait after typing before home row mods can be used again.
-    #define STREAK_DECAY_DEFAULT_MS 150
+    // Note: 100 WPM is around 120ms between keypresses.
+    #define STREAK_DECAY_DEFAULT_MS 130
+    // Unfortunately, backspace counts as part of the typing "streak". We use a shorter time here
+    // so we can easily switch to the symbol layer after deleting some text.
+    #define STREAK_DECAY_LAYER_MS 90
     // How much time you have left after tapping a key to hold it again in order to make it auto-repeat.
     #define QUICK_TAP_DEFAULT_MS 300
     // |------------------------|------------------------|
@@ -210,7 +214,7 @@
         hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
         tapping-term-ms = <HOLDING_TIME_DEFAULT_MS>;
         quick-tap-ms = <QUICK_TAP_DEFAULT_MS>;
-        require-prior-idle-ms = <STREAK_DECAY_DEFAULT_MS>;
+        require-prior-idle-ms = <STREAK_DECAY_LAYER_MS>;
         #binding-cells = <2>;
         bindings = <&mo>, <&kp>;
     };
@@ -221,7 +225,7 @@
         hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
         tapping-term-ms = <HOLDING_TIME_DEFAULT_MS>;
         quick-tap-ms = <QUICK_TAP_DEFAULT_MS>;
-        require-prior-idle-ms = <STREAK_DECAY_DEFAULT_MS>;
+        require-prior-idle-ms = <STREAK_DECAY_LAYER_MS>;
         #binding-cells = <2>;
         bindings = <&mo>, <&kp>;
     };
