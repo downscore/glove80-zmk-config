@@ -30,17 +30,6 @@
 // Default tapping term for hold-tap and tap-dance behaviors.
 #define DEFAULT_TAPPING_TERM_MS 200
 
-// Homerow mod configuration. Separate values for index finger mods.
-// ---
-// Time before a hold is triggered.
-#define HOLDING_TIME_DEFAULT_MS 250
-#define HOLDING_TIME_INDEX_MS 250
-// How long you need to wait after typing before home row mods can be used again.
-#define STREAK_DECAY_DEFAULT_MS 100
-// How much time you have left after tapping a key to hold it again in order to make it auto-repeat.
-#define REPEAT_DECAY_DEFAULT_MS 300
-#define REPEAT_DECAY_INDEX_MS 300
-
 // Configure caps word to not terminate on hyphens (kebab-case) or backspace.
 &caps_word {
     continue-list = <UNDERSCORE MINUS BACKSPACE>;
@@ -150,9 +139,15 @@
   };
 };
 
-// Bilateral homerow mods
+// Homerow mod configuration.
 / {
   behaviors {
+    // Time before a hold is triggered.
+    #define HOLDING_TIME_DEFAULT_MS 250
+    // How long you need to wait after typing before home row mods can be used again.
+    #define STREAK_DECAY_DEFAULT_MS 150
+    // How much time you have left after tapping a key to hold it again in order to make it auto-repeat.
+    #define QUICK_TAP_DEFAULT_MS 300
     // |------------------------|------------------------|
     // | LEFT_HAND_KEYS         |        RIGHT_HAND_KEYS |
     // |                        |                        |
@@ -192,7 +187,7 @@
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
         tapping-term-ms = <HOLDING_TIME_DEFAULT_MS>;
-        quick-tap-ms = <REPEAT_DECAY_DEFAULT_MS>;
+        quick-tap-ms = <QUICK_TAP_DEFAULT_MS>;
         require-prior-idle-ms = <STREAK_DECAY_DEFAULT_MS>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
@@ -203,28 +198,8 @@
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
         tapping-term-ms = <HOLDING_TIME_DEFAULT_MS>;
-        quick-tap-ms = <REPEAT_DECAY_DEFAULT_MS>;
+        quick-tap-ms = <QUICK_TAP_DEFAULT_MS>;
         require-prior-idle-ms = <STREAK_DECAY_DEFAULT_MS>;
-        #binding-cells = <2>;
-        bindings = <&kp>, <&kp>;
-    };
-    hrli: homerow_left_hand_index {
-        compatible = "zmk,behavior-hold-tap";
-        flavor = "tap-preferred";
-        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
-        hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
-        tapping-term-ms = <HOLDING_TIME_INDEX_MS>;
-        quick-tap-ms = <REPEAT_DECAY_INDEX_MS>;
-        #binding-cells = <2>;
-        bindings = <&kp>, <&kp>;
-    };
-    hrri: homerow_right_hand_index {
-        compatible = "zmk,behavior-hold-tap";
-        flavor = "tap-preferred";
-        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
-        hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
-        tapping-term-ms = <HOLDING_TIME_INDEX_MS>;
-        quick-tap-ms = <REPEAT_DECAY_INDEX_MS>;
         #binding-cells = <2>;
         bindings = <&kp>, <&kp>;
     };
@@ -234,7 +209,7 @@
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
         tapping-term-ms = <HOLDING_TIME_DEFAULT_MS>;
-        quick-tap-ms = <REPEAT_DECAY_DEFAULT_MS>;
+        quick-tap-ms = <QUICK_TAP_DEFAULT_MS>;
         require-prior-idle-ms = <STREAK_DECAY_DEFAULT_MS>;
         #binding-cells = <2>;
         bindings = <&mo>, <&kp>;
@@ -245,7 +220,7 @@
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
         tapping-term-ms = <HOLDING_TIME_DEFAULT_MS>;
-        quick-tap-ms = <REPEAT_DECAY_DEFAULT_MS>;
+        quick-tap-ms = <QUICK_TAP_DEFAULT_MS>;
         require-prior-idle-ms = <STREAK_DECAY_DEFAULT_MS>;
         #binding-cells = <2>;
         bindings = <&mo>, <&kp>;
@@ -257,12 +232,12 @@
 
     layer_Base {
       bindings = <
-         &kp C_BRI_DN  &kp C_BRI_UP            &kp C_PREV   &kp C_NEXT       &kp C_PP                                                                                             &kp C_MUTE  &kp C_VOL_DN          &kp C_VOL_UP          &kp F9    &kp F10
-            &kp EQUAL        &kp N1                &kp N2       &kp N3         &kp N4  &kp N5                                                                          &kp N6         &kp N7        &kp N8                &kp N9          &kp N0  &kp MINUS
-            &kp GRAVE         &kp Q  &hrll LAYER_Symbol W        &kp E          &kp R   &kp T                                                                           &kp Y          &kp U         &kp I  &hrrl LAYER_Symbol O           &kp P   &kp BSLH
-              &kp ESC   &hrl LALT A          &hrl LCTRL S  &hrl LGUI D  &hrli LSHFT F   &kp G                                                                           &kp H  &hrri LSHFT J   &hrr LGUI K          &hrr LCTRL L  &hrr LALT SEMI    &kp SQT
-             &regular         &kp Z                 &kp X        &kp C          &kp V   &kp B  &kp LSHFT  &kp TAB   &raise  &kp LGUI  &kp LCTRL  &smart_shift LSHFT 0   &kp N          &kp M     &kp COMMA               &kp DOT        &kp FSLH  &kp PG_UP
- &magic LAYER_Magic 0      &kp HOME               &kp END     &kp LEFT      &kp RIGHT           &kp BSPC   &lower  &kp DEL  &kp LALT    &kp RET             &kp SPACE                 &kp UP      &kp DOWN              &kp LBKT        &kp RBKT  &kp PG_DN
+         &kp C_BRI_DN  &kp C_BRI_UP            &kp C_PREV   &kp C_NEXT      &kp C_PP                                                                                            &kp C_MUTE  &kp C_VOL_DN          &kp C_VOL_UP          &kp F9    &kp F10
+            &kp EQUAL        &kp N1                &kp N2       &kp N3        &kp N4  &kp N5                                                                          &kp N6        &kp N7        &kp N8                &kp N9          &kp N0  &kp MINUS
+            &kp GRAVE         &kp Q  &hrll LAYER_Symbol W        &kp E         &kp R   &kp T                                                                           &kp Y         &kp U         &kp I  &hrrl LAYER_Symbol O           &kp P   &kp BSLH
+              &kp ESC   &hrl LALT A          &hrl LCTRL S  &hrl LGUI D  &hrl LSHFT F   &kp G                                                                           &kp H  &hrr LSHFT J   &hrr LGUI K          &hrr LCTRL L  &hrr LALT SEMI    &kp SQT
+             &regular         &kp Z                 &kp X        &kp C         &kp V   &kp B  &kp LSHFT  &kp TAB   &raise  &kp LGUI  &kp LCTRL  &smart_shift LSHFT 0   &kp N         &kp M     &kp COMMA               &kp DOT        &kp FSLH  &kp PG_UP
+ &magic LAYER_Magic 0      &kp HOME               &kp END     &kp LEFT     &kp RIGHT           &kp BSPC   &lower  &kp DEL  &kp LALT    &kp RET             &kp SPACE                &kp UP      &kp DOWN              &kp LBKT        &kp RBKT  &kp PG_DN
       >;
     };
 
