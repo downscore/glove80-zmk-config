@@ -149,7 +149,7 @@
     #define STREAK_DECAY_DEFAULT_MS 130
     // Unfortunately, backspace counts as part of the typing "streak". We use a shorter time here
     // so we can easily switch to the symbol layer after deleting some text.
-    #define STREAK_DECAY_LAYER_MS 90
+    #define STREAK_DECAY_LAYER_MS 75
     // How much time you have left after tapping a key to hold it again in order to make it auto-repeat.
     #define QUICK_TAP_DEFAULT_MS 300
     // |------------------------|------------------------|
