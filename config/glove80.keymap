@@ -209,7 +209,7 @@
     };
     hrll: homerow_left_hand_layer {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "hold-preferred";
+        flavor = "balanced";
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
         tapping-term-ms = <HOLDING_TIME_DEFAULT_MS>;
@@ -220,7 +220,7 @@
     };
     hrrl: homerow_right_hand_layer {
         compatible = "zmk,behavior-hold-tap";
-        flavor = "hold-preferred";
+        flavor = "balanced";
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         hold-trigger-on-release;  // Allow pressing multiple homerow mods at once.
         tapping-term-ms = <HOLDING_TIME_DEFAULT_MS>;
