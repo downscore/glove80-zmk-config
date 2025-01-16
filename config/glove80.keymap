@@ -59,7 +59,7 @@
       tapping-term-ms = <DEFAULT_TAPPING_TERM_MS>;
       bindings = <&mo LAYER_Regular>, <&to LAYER_Regular>;
     };
-    // Magic key. Hold for RGB status display.
+    // Magic key. Tap for RGB status display.
     magic: magic {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
