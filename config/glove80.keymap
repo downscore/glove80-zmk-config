@@ -29,8 +29,6 @@
 
 // Default tapping term for hold-tap and tap-dance behaviors.
 #define DEFAULT_TAPPING_TERM_MS 200
-// Tapping term for smart shift (tap time for caps word).
-#define SMART_SHIFT_TAPPING_TERM_MS 150
 
 // Configure caps word to not terminate on hyphens (kebab-case) or backspace.
 &caps_word {
@@ -73,8 +71,8 @@
     smart_shift: smart_shift {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <SMART_SHIFT_TAPPING_TERM_MS>;
+      flavor = "hold-preferred";
+      tapping-term-ms = <DEFAULT_TAPPING_TERM_MS>;
       bindings = <&kp>, <&caps_word>;
     };
   };
