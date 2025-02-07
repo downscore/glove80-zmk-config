@@ -213,6 +213,7 @@
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
         tapping-term-ms = <HOLDING_TIME_DEFAULT_MS>;
         quick-tap-ms = <QUICK_TAP_DEFAULT_MS>;
+        require-prior-idle-ms = <STREAK_DECAY_LAYER_MS>;
         #binding-cells = <2>;
         bindings = <&mo>, <&kp>;
     };
@@ -222,6 +223,7 @@
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         tapping-term-ms = <HOLDING_TIME_DEFAULT_MS>;
         quick-tap-ms = <QUICK_TAP_DEFAULT_MS>;
+        require-prior-idle-ms = <STREAK_DECAY_LAYER_MS>;
         #binding-cells = <2>;
         bindings = <&mo>, <&kp>;
     };
