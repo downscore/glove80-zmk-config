@@ -68,12 +68,11 @@
       bindings = <&mo>, <&rgb_ug_status_macro>;
     };
     // Shift/caps word key. Hold for shift, tap for caps word.
-    // TODO: Not currently used. Delete this if not planning to use it in the future.
     smart_shift: smart_shift {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       flavor = "hold-preferred";
-      tapping-term-ms = <DEFAULT_TAPPING_TERM_MS>;
+      tapping-term-ms = 125;
       bindings = <&kp>, <&caps_word>;
     };
   };
@@ -230,12 +229,12 @@
 
     layer_Base {
       bindings = <
-         &kp C_BRI_DN  &kp C_BRI_UP            &kp C_PREV   &kp C_NEXT      &kp C_PP                                                                                 &kp C_MUTE  &kp C_VOL_DN          &kp C_VOL_UP          &kp F9    &kp F10
-            &kp EQUAL        &kp N1                &kp N2       &kp N3        &kp N4  &kp N5                                                               &kp N6        &kp N7        &kp N8                &kp N9          &kp N0  &kp MINUS
-            &kp GRAVE         &kp Q  &hrll LAYER_Symbol W        &kp E         &kp R   &kp T                                                                &kp Y         &kp U         &kp I  &hrrl LAYER_Symbol O           &kp P   &kp BSLH
-              &kp ESC   &hrl LALT A          &hrl LCTRL S  &hrl LGUI D  &hrl LSHFT F   &kp G                                                                &kp H  &hrr LSHFT J   &hrr LGUI K          &hrr LCTRL L  &hrr LALT SEMI    &kp SQT
-             &regular         &kp Z                 &kp X        &kp C         &kp V   &kp B  &kp LSHFT  &kp TAB   &raise  &kp LGUI  &kp LCTRL  &kp LSHFT   &kp N         &kp M     &kp COMMA               &kp DOT        &kp FSLH  &kp PG_UP
- &magic LAYER_Magic 0      &kp HOME               &kp END     &kp LEFT     &kp RIGHT           &kp BSPC   &lower  &kp DEL  &kp LALT    &kp RET  &kp SPACE                &kp UP      &kp DOWN              &kp LBKT        &kp RBKT  &kp PG_DN
+         &kp C_BRI_DN  &kp C_BRI_UP            &kp C_PREV   &kp C_NEXT      &kp C_PP                                                                                            &kp C_MUTE  &kp C_VOL_DN          &kp C_VOL_UP          &kp F9    &kp F10
+            &kp EQUAL        &kp N1                &kp N2       &kp N3        &kp N4  &kp N5                                                                          &kp N6        &kp N7        &kp N8                &kp N9          &kp N0  &kp MINUS
+            &kp GRAVE         &kp Q  &hrll LAYER_Symbol W        &kp E         &kp R   &kp T                                                                           &kp Y         &kp U         &kp I  &hrrl LAYER_Symbol O           &kp P   &kp BSLH
+              &kp ESC   &hrl LALT A          &hrl LCTRL S  &hrl LGUI D  &hrl LSHFT F   &kp G                                                                           &kp H  &hrr LSHFT J   &hrr LGUI K          &hrr LCTRL L  &hrr LALT SEMI    &kp SQT
+             &regular         &kp Z                 &kp X        &kp C         &kp V   &kp B  &kp LSHFT  &kp TAB   &raise  &kp LGUI  &kp LCTRL  &smart_shift LSHFT 0   &kp N         &kp M     &kp COMMA               &kp DOT        &kp FSLH  &kp PG_UP
+ &magic LAYER_Magic 0      &kp HOME               &kp END     &kp LEFT     &kp RIGHT           &kp BSPC   &lower  &kp DEL  &kp LALT    &kp RET             &kp SPACE                &kp UP      &kp DOWN              &kp LBKT        &kp RBKT  &kp PG_DN
       >;
     };
 
