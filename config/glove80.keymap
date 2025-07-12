@@ -235,7 +235,7 @@
             &kp GRAVE         &kp Q  &hrll LAYER_Symbol W        &kp E         &kp R   &kp T                                                                &kp Y         &kp U         &kp I  &hrrl LAYER_Symbol O           &kp P              &kp BSLH
               &kp ESC   &hrl LALT A          &hrl LCTRL S  &hrl LGUI D  &hrl LSHFT F   &kp G                                                                &kp H  &hrr LSHFT J   &hrr LGUI K          &hrr LCTRL L  &hrr LALT SEMI               &kp SQT
          &kp LA(BSPC)         &kp Z                 &kp X        &kp C         &kp V   &kp B  &kp LSHFT  &kp TAB   &raise  &kp LGUI  &kp UNDER  &kp LSHFT   &kp N         &kp M     &kp COMMA               &kp DOT        &kp FSLH  &smart_shift LSHFT 0
- &magic LAYER_Magic 0      &kp HOME               &kp END     &kp LEFT     &kp RIGHT           &kp BSPC   &lower  &kp DEL  &kp LALT    &kp RET  &kp SPACE                &kp UP      &kp DOWN              &kp LBKT        &kp RBKT              &regular
+ &magic LAYER_Magic 0      &kp HOME               &kp END     &kp LEFT     &kp RIGHT           &kp BSPC   &lower  &kp DEL  &kp LPAR    &kp RET  &kp SPACE                &kp UP      &kp DOWN              &kp LBKT        &kp RBKT              &regular
       >;
     };
 
