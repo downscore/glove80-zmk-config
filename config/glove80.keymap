@@ -38,13 +38,6 @@
 // System commands
 / {
   behaviors {
-    // Lower layer key. Tap dance to toggle the layer on double tap.
-    lower: lower {
-      compatible = "zmk,behavior-tap-dance";
-      #binding-cells = <0>;
-      tapping-term-ms = <DEFAULT_TAPPING_TERM_MS>;
-      bindings = <&mo LAYER_Lower>, <&to LAYER_Lower>;
-    };
     // Raise layer key. Tap dance to toggle the layer on double tap.
     raise: raise {
       compatible = "zmk,behavior-tap-dance";
@@ -238,12 +231,12 @@
 
     layer_Base {
       bindings = <
-         &kp C_BRI_DN  &kp C_BRI_UP            &kp C_PREV   &kp C_NEXT      &kp C_PP                                                                                                    &kp C_MUTE  &kp C_VOL_DN          &kp C_VOL_UP          &kp F9               &kp F10
-            &kp EQUAL        &kp N1                &kp N2       &kp N3        &kp N4  &kp N5                                                                                  &kp N6        &kp N7        &kp N8                &kp N9          &kp N0             &kp MINUS
-            &kp GRAVE         &kp Q  &hrll LAYER_Symbol W        &kp E         &kp R   &kp T                                                                                   &kp Y         &kp U         &kp I  &hrrl LAYER_Symbol O           &kp P              &kp BSLH
-              &kp ESC   &hrl LALT A          &hrl LCTRL S  &hrl LGUI D  &hrl LSHFT F   &kp G                                                                                   &kp H  &hrr LSHFT J   &hrr LGUI K          &hrr LCTRL L  &hrr LALT SEMI               &kp SQT
-         &kp LA(BSPC)         &kp Z                 &kp X        &kp C         &kp V   &kp B  &kp LSHFT  &kp TAB   &raise           &kp LGUI  &modsym LCTRL UNDER  &kp LSHFT   &kp N         &kp M     &kp COMMA               &kp DOT        &kp FSLH  &smart_shift LSHFT 0
- &magic LAYER_Magic 0      &kp HOME               &kp END     &kp LEFT     &kp RIGHT           &kp BSPC   &lower  &kp DEL  &modsym LALT LPAR              &kp RET  &kp SPACE                &kp UP      &kp DOWN              &kp LBKT        &kp RBKT              &regular
+         &kp C_BRI_DN  &kp C_BRI_UP            &kp C_PREV   &kp C_NEXT      &kp C_PP                                                                                                            &kp C_MUTE  &kp C_VOL_DN          &kp C_VOL_UP          &kp F9               &kp F10
+            &kp EQUAL        &kp N1                &kp N2       &kp N3        &kp N4  &kp N5                                                                                          &kp N6        &kp N7        &kp N8                &kp N9          &kp N0             &kp MINUS
+            &kp GRAVE         &kp Q  &hrll LAYER_Symbol W        &kp E         &kp R   &kp T                                                                                           &kp Y         &kp U         &kp I  &hrrl LAYER_Symbol O           &kp P              &kp BSLH
+              &kp ESC   &hrl LALT A          &hrl LCTRL S  &hrl LGUI D  &hrl LSHFT F   &kp G                                                                                           &kp H  &hrr LSHFT J   &hrr LGUI K          &hrr LCTRL L  &hrr LALT SEMI               &kp SQT
+         &kp LA(BSPC)         &kp Z                 &kp X        &kp C         &kp V   &kp B  &kp LSHFT          &kp TAB   &raise           &kp LGUI  &modsym LCTRL UNDER  &kp LSHFT   &kp N         &kp M     &kp COMMA               &kp DOT        &kp FSLH  &smart_shift LSHFT 0
+ &magic LAYER_Magic 0      &kp HOME               &kp END     &kp LEFT     &kp RIGHT           &kp BSPC  &mo LAYER_Lower  &kp DEL  &modsym LALT LPAR              &kp RET  &kp SPACE                &kp UP      &kp DOWN              &kp LBKT        &kp RBKT              &regular
       >;
     };
 
@@ -291,12 +284,12 @@
     // - No homerow mods.
     layer_Raise {
       bindings = <
-              &kp ESC     &kp F2  &kp F3    &kp F4     &kp F5                                                                                   &kp F6     &kp F7     &kp F8    &kp F9    &kp F10
-            &kp EQUAL     &kp N1  &kp N2    &kp N3     &kp N4  &kp N5                                                                 &kp N6    &kp N7     &kp N8     &kp N9    &kp N0  &kp MINUS
-                &kp T    &kp TAB   &kp Q     &kp W      &kp E   &kp R                                                                  &kp Y     &kp U      &kp I      &kp O     &kp P   &kp BSLH
-                &kp G  &kp LSHFT   &kp A     &kp S      &kp D   &kp F                                                               &kp LEFT  &kp DOWN     &kp UP  &kp RIGHT  &kp SEMI    &kp SQT
-                &kp B  &kp LCTRL   &kp Z     &kp X      &kp C   &kp V  &kp LSHFT  &kp TAB    &to 0  &kp LGUI  &kp LCTRL  &kp LSHFT     &kp N     &kp M  &kp COMMA    &kp DOT  &kp FSLH  &kp PG_UP
- &magic LAYER_Magic 0   &kp LCMD   &none  &kp LEFT  &kp RIGHT           &kp BSPC   &lower  &kp DEL  &kp LALT  &kp ENTER  &kp SPACE              &kp UP   &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
+              &kp ESC     &kp F2  &kp F3    &kp F4     &kp F5                                                                                           &kp F6     &kp F7     &kp F8    &kp F9    &kp F10
+            &kp EQUAL     &kp N1  &kp N2    &kp N3     &kp N4  &kp N5                                                                         &kp N6    &kp N7     &kp N8     &kp N9    &kp N0  &kp MINUS
+                &kp T    &kp TAB   &kp Q     &kp W      &kp E   &kp R                                                                          &kp Y     &kp U      &kp I      &kp O     &kp P   &kp BSLH
+                &kp G  &kp LSHFT   &kp A     &kp S      &kp D   &kp F                                                                       &kp LEFT  &kp DOWN     &kp UP  &kp RIGHT  &kp SEMI    &kp SQT
+                &kp B  &kp LCTRL   &kp Z     &kp X      &kp C   &kp V  &kp LSHFT          &kp TAB    &to 0  &kp LGUI  &kp LCTRL  &kp LSHFT     &kp N     &kp M  &kp COMMA    &kp DOT  &kp FSLH  &kp PG_UP
+ &magic LAYER_Magic 0   &kp LCMD   &none  &kp LEFT  &kp RIGHT           &kp BSPC  &mo LAYER_Lower  &kp DEL  &kp LALT  &kp ENTER  &kp SPACE              &kp UP   &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
       >;
     };
 
@@ -304,12 +297,12 @@
     // Function keys are mapped to media keys, but lower layer is accessible.
     layer_Regular {
       bindings = <
-         &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV  &kp C_NEXT   &kp C_PP                                                                               &kp C_MUTE  &kp C_VOL_DN   &kp C_VOL_UP    &kp F9               &kp F10
-            &kp EQUAL        &kp N1      &kp N2      &kp N3     &kp N4  &kp N5                                                               &kp N6      &kp N7        &kp N8         &kp N9    &kp N0             &kp MINUS
-            &kp GRAVE         &kp Q       &kp W       &kp E      &kp R   &kp T                                                                &kp Y       &kp U         &kp I          &kp O     &kp P              &kp BSLH
-              &kp ESC         &kp A       &kp S       &kp D      &kp F   &kp G                                                                &kp H       &kp J         &kp K          &kp L  &kp SEMI               &kp SQT
-                &to 0         &kp Z       &kp X       &kp C      &kp V   &kp B  &kp LSHFT  &kp TAB   &raise  &kp LGUI  &kp LCTRL  &kp LSHFT   &kp N       &kp M     &kp COMMA        &kp DOT  &kp FSLH  &smart_shift LSHFT 0
- &magic LAYER_Magic 0      &kp HOME     &kp END    &kp LEFT  &kp RIGHT           &kp BSPC   &lower  &kp DEL  &kp LALT    &kp RET  &kp SPACE              &kp UP      &kp DOWN       &kp LBKT  &kp RBKT                 &to 0
+         &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV  &kp C_NEXT   &kp C_PP                                                                                       &kp C_MUTE  &kp C_VOL_DN   &kp C_VOL_UP    &kp F9               &kp F10
+            &kp EQUAL        &kp N1      &kp N2      &kp N3     &kp N4  &kp N5                                                                       &kp N6      &kp N7        &kp N8         &kp N9    &kp N0             &kp MINUS
+            &kp GRAVE         &kp Q       &kp W       &kp E      &kp R   &kp T                                                                        &kp Y       &kp U         &kp I          &kp O     &kp P              &kp BSLH
+              &kp ESC         &kp A       &kp S       &kp D      &kp F   &kp G                                                                        &kp H       &kp J         &kp K          &kp L  &kp SEMI               &kp SQT
+                &to 0         &kp Z       &kp X       &kp C      &kp V   &kp B  &kp LSHFT          &kp TAB   &raise  &kp LGUI  &kp LCTRL  &kp LSHFT   &kp N       &kp M     &kp COMMA        &kp DOT  &kp FSLH  &smart_shift LSHFT 0
+ &magic LAYER_Magic 0      &kp HOME     &kp END    &kp LEFT  &kp RIGHT           &kp BSPC  &mo LAYER_Lower  &kp DEL  &kp LALT    &kp RET  &kp SPACE              &kp UP      &kp DOWN       &kp LBKT  &kp RBKT                 &to 0
       >;
     };
   };
